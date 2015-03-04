@@ -1,0 +1,44 @@
+﻿@model AlertSystemMVC.Models.AlertEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Key)
+    <div>
+        @{Html.RenderPartial("_Form", Model);}
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    if ($("select[name='RepeatType']").val()== 0)
+        $("#ShiftName").hide();
+    else
+        $("#DailyAlertTime").hide();
+
+    if ($("select[name='AlertType']").val()==1) {
+        $("#ThresholdValue").hide();
+        $("#Operation").hide();
+    }            
+    $("select[name='RepeatType']").change(function () {
+        $("#DailyAlertTime").toggle();
+        $("#ShiftName").toggle();
+    });
+
+    $("select[name='AlertType']").change(function () {
+        $("#ThresholdValue").toggle();
+        $("#Operation").toggle();
+    })
+</script>

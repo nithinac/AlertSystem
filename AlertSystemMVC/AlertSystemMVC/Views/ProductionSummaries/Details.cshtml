@@ -1,0 +1,50 @@
+﻿@model AlertSystemMVC.Models.ProductionSummary
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductionSummary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Downtime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Downtime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rejected)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rejected)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Key }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

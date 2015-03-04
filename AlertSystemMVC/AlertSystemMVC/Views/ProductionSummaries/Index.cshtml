@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AlertSystemMVC.Models.ProductionSummary>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Downtime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rejected)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Downtime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rejected)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Key }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Key }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Key })
+        </td>
+    </tr>
+}
+
+</table>
