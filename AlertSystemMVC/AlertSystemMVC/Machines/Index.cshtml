@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AlertSystemMVC.Models.Machine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MachineType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinLoad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxLoad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MachineType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinLoad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxLoad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Key }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Key }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Key })
+        </td>
+    </tr>
+}
+
+</table>

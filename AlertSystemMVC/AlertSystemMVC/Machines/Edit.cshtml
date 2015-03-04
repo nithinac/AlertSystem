@@ -1,0 +1,25 @@
+﻿@model AlertSystemMVC.Models.MachineEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Key)
+    <div>
+        @{Html.RenderPartial("_Form", Model);}
+    </div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

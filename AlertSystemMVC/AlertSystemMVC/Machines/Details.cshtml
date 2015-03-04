@@ -1,0 +1,57 @@
+﻿@model AlertSystemMVC.Models.Machine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Machine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MachineType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MachineType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinLoad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinLoad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxLoad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxLoad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Key }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
